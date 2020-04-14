@@ -18,15 +18,13 @@ class PostListTransformer extends TransformerAbstract
     public function transform(Post $post)
     {
         $category = $post->category ? $post->category->name : null;
-        $topic = $post->topic ? $post->topic->name : null;
         return [
             'id' => $post->id,
             'title' => $post->title,
             'author' => $post->user->name,
             'category' => $category,
-            'topic' => $topic,
             'post_status' => $post->post_status,
-            'visits' => $post->visits(false),
+            'visits' => $post->visits(),
             'likes' => $post->likes,
             'dislikes' => $post->dislikes,
             'comments' => $post->comments,

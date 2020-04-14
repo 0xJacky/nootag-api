@@ -30,16 +30,12 @@ class PostController extends Controller
             'title' => 'required|max:255',
             'content' => 'required',
             'category_id' => 'required|integer|min:1',
-            'topic_id' => 'sometimes|integer|min:1',
             'post_name' => 'required|sometimes|max:255',
-            'post_status' => 'required|integer|min:0|max:2',
-            'allow_comment' => 'required|integer|boolean|sometimes',
-            'push' => 'required|integer|boolean|sometimes'
+            'post_status' => 'required|integer|min:0|max:2'
         ]);
 
         $append = [
-            'user_id' => $this->user()->id,
-            'post_type' => 'post',
+            'user_id' => $this->user()->id
         ];
 
         $request = array_merge($request, $append);
@@ -80,8 +76,8 @@ class PostController extends Controller
             'post_status' => 'sometimes|integer|between:0,2',
             'post_name' => 'required|sometimes|max:255',
             'order_by' => ['sometimes', Rule::in(['id', 'user_id',
-                'category_id', 'topic_id', 'push',
-                'allow_comment', 'post_status', 'created_at', 'visits', 'comments'])],
+                'category_id',
+                'post_status', 'created_at', 'visits'])],
             'sort' => ['sometimes', Rule::in(['asc', 'desc'])],
             'trashed' => 'sometimes|in:true,false'
         ]);
@@ -93,7 +89,7 @@ class PostController extends Controller
 
         unset($request['trashed'], $request['sort'], $request['order_by'], $request['category']);
 
-        $posts = Post::with('category', 'topic')->orderBy($order_by, $sort);
+        $posts = Post::with('category')->orderBy($order_by, $sort);
 
         if ($trashed === 'true') {
             $posts->onlyTrashed();
@@ -129,11 +125,8 @@ class PostController extends Controller
             'title' => 'sometimes|max:255',
             'content' => 'sometimes',
             'category_id' => 'sometimes|integer|min:1',
-            'topic_id' => 'sometimes|integer|min:1',
             'post_name' => 'sometimes|max:255',
-            'post_status' => 'sometimes|integer|min:0|max:2',
-            'allow_comment' => 'sometimes|integer|sometimes',
-            'push' => 'sometimes|integer|sometimes'
+            'post_status' => 'sometimes|integer|min:0|max:2'
         ]);
 
         $post = Post::findOrFail($id);
@@ -161,7 +154,6 @@ class PostController extends Controller
         $request = $request->validate(['mark' => 'sometimes|max:255']);
 
         $post = Post::findOrFail($id);
-        $post->mark = $request['mark'] ?? null;
         $post->save();
 
         $post->delete();
@@ -183,7 +175,6 @@ class PostController extends Controller
     {
         $post = Post::onlyTrashed()->findOrFail($id);
         $post->restore();
-        $post->update(['mark' => null]);
         return $this->response->noContent();
     }
 }

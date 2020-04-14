@@ -30,11 +30,6 @@ class MediaController extends Controller
 {
     use Helpers;
 
-    function __construct()
-    {
-        $this->middleware('has_power:6');
-    }
-
     public function get_list(Request $request)
     {
         $request = $request->validate([
