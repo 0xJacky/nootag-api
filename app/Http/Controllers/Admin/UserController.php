@@ -30,9 +30,7 @@ class UserController extends Controller
         $request = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email',
-            'user_group_id' => 'required|integer',
             'password' => 'required|min:8|max:255',
-            'phone' => 'sometimes|max:16',
         ]);
 
         $request['password'] = bcrypt($request['password']);
@@ -59,18 +57,10 @@ class UserController extends Controller
         $request = $request->validate([
             'name' => 'required|sometimes|max:255',
             'email' => 'required|sometimes|email',
-            'user_group_id' => 'sometimes|integer',
-            'password' => 'sometimes|nullable|min:8|max:255',
-            'phone' => 'sometimes|max:16',
-            'description' => 'sometimes|max:255',
-            'active' => 'required|in:0,1'
+            'user_group_id' => 'sometimes|integer'
         ]);
 
         $user = User::findOrFail($id);
-
-        if (isset($request['password']) && $request['password']) {
-            $request['password'] = bcrypt($request['password']);
-        }
 
         $user->update($request);
 

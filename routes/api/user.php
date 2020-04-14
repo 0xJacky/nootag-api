@@ -16,3 +16,5 @@ $api->put('authorizations/current', 'AuthorizationsController@update');
 
 // 注销并删除 token
 $api->delete('authorizations/current', 'AuthorizationsController@destroy');
+
+$api->get('user', 'UserController@info');

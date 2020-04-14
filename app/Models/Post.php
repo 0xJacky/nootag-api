@@ -42,7 +42,7 @@ class Post extends Model
      * @var array
      */
     protected $hidden = [
-        'category_id', 'topic_id', 'post_type', 'deleted_at'
+        'category_id', 'post_type', 'deleted_at'
     ];
 
     private $category;
@@ -84,6 +84,13 @@ class Post extends Model
     public function imageCount()
     {
         return $this->images()->count();
+    }
+
+    public function visits()
+    {
+        $this->visits++;
+        $this->save();
+        return $this->visits;
     }
 
 }
