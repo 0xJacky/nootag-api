@@ -14,6 +14,11 @@ class CategoryController extends Controller
 {
     use Helpers;
 
+    public function __construct()
+    {
+        $this->middleware('has_power:6');
+    }
+
     /**
      * 添加文章分组
      *
@@ -32,7 +37,9 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request = $request->validate([
-            'name' => 'required|max:255'
+            'name' => 'required|max:255',
+            'description' => 'required|max:255',
+            'multi' => 'required|sometimes'
         ]);
 
         $category = Category::create($request);
@@ -88,7 +95,7 @@ class CategoryController extends Controller
         $sort = $request['sort'] ?? 'asc';
         unset($request['trashed'], $request['sort']);
 
-        $categories = Category::orderBy('id', $sort)->select('id', 'name', 'created_at', 'updated_at');
+        $categories = Category::orderBy('id', $sort)->select('id', 'name', 'description', 'created_at', 'updated_at');
 
         if ($trashed === 'true') {
             $categories->onlyTrashed();
@@ -124,7 +131,9 @@ class CategoryController extends Controller
     public function modify($id, Request $request)
     {
         $request = $request->validate([
-            'name' => 'required|sometimes|max:255'
+            'name' => 'required|sometimes|max:255',
+            'description' => 'required|sometimes|max:255',
+            'multi' => 'required|sometimes|sometimes'
         ]);
 
         $category = Category::findOrFail($id);

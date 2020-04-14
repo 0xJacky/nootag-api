@@ -22,16 +22,11 @@ class Category extends Model
      * @var array
      */
     protected $fillable = [
-       'name'
+       'name', 'multi', 'description'
     ];
 
     protected $hidden = [
         'deleted_at'
-    ];
-
-    protected $casts = [
-        'created_at' => 'datetime:Y-m-d H:i:s',
-        'updated_at' => 'datetime:Y-m-d H:i:s',
     ];
 
     public function posts()

@@ -57,9 +57,6 @@ class AnalyticController extends Controller
                 break;
         }
 
-        $disk_total = disk_total_space('.');
-        $disk_free = disk_free_space('.');
-
         return $this->response->array([
             'cpu' => [
                 'x' => now()->toTimeString(),
@@ -68,11 +65,6 @@ class AnalyticController extends Controller
             'memory' => [
                 'pressure' => (int)$mem_usage,
             ],
-            'disk' => [
-                'total' => $disk_total,
-                'free' => $disk_free,
-                'percent' => round((($disk_total - $disk_free) / $disk_total) * 100, 2)
-            ]
         ]);
     }
 }

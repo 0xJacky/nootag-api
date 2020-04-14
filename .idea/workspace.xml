@@ -1,38 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="695ba34c-fc74-4a8b-8c1b-7929acdae8a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthorizationsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/AuthorizationRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Request.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/SocialAuthorizationRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UserRegistrationRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Serializers/NoDataArraySerializer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Traits/LevelListTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Traits/PassportToken.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Traits/PostList.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Traits/RevisionableTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/api/post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AnalyticController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AnalyticController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MediaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MediaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/PostListTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/PostListTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/PostTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/PostTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/TopicListTransformer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/TopicTransformer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/UserListTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/UserListTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/user.php" afterDir="false" />
-    </list>
+    <list default="true" id="695ba34c-fc74-4a8b-8c1b-7929acdae8a6" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,9 +12,6 @@
     <execution>
       <executable path="composer" />
     </execution>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -176,21 +142,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
-      <recent name="$PROJECT_DIR$/routes/api" />
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/app/Http" />
-      <recent name="$PROJECT_DIR$/config" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/app/Models" />
+      <recent name="$PROJECT_DIR$/app/Transformers" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
+      <recent name="$PROJECT_DIR$/routes/api" />
     </key>
   </component>
   <component name="RunManager">
@@ -212,8 +177,6 @@
       <workItem from="1585039878574" duration="3965000" />
       <workItem from="1585100519617" duration="122000" />
       <workItem from="1586501412430" duration="602000" />
-      <workItem from="1586752339599" duration="1746000" />
-      <workItem from="1586775409594" duration="4948000" />
     </task>
     <servers />
   </component>
@@ -233,10 +196,9 @@
       <screen x="0" y="23" width="1680" height="966" />
     </state>
     <state x="965" y="435" key="NewPhpFileDialog/0.23.1680.966@0.23.1680.966" timestamp="1585049317681" />
-    <state x="719" y="275" width="1021" height="541" key="find.popup" timestamp="1586758268088">
-      <screen x="0" y="23" width="2048" height="1074" />
+    <state x="843" y="261" width="837" height="486" key="find.popup" timestamp="1585047891995">
+      <screen x="0" y="23" width="1680" height="965" />
     </state>
     <state x="843" y="261" width="837" height="486" key="find.popup/0.23.1680.965@0.23.1680.965" timestamp="1585047891995" />
-    <state x="719" y="275" width="1021" height="541" key="find.popup/0.23.2048.1074@0.23.2048.1074" timestamp="1586758268088" />
   </component>
 </project>

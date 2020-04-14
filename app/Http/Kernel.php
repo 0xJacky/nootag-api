@@ -34,7 +34,8 @@ class Kernel extends HttpKernel
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             // \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             // \App\Http\Middleware\VerifyCsrfToken::class,
-            \Illuminate\Routing\Middleware\SubstituteBindings::class
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \Spatie\ResponseCache\Middlewares\CacheResponse::class,
         ],
 
         'api' => [
@@ -61,7 +62,11 @@ class Kernel extends HttpKernel
         // 'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         // 'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         // 'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'append_footer' => \App\Http\Middleware\AppendFooter::class
+        'last_active' => \App\Http\Middleware\LastActive::class,
+        'has_power' => \App\Http\Middleware\HasPower::class,
+        'append_footer' => \App\Http\Middleware\AppendFooter::class,
+        'doNotCacheResponse' => \Spatie\ResponseCache\Middlewares\DoNotCacheResponse::class,
+        'cacheResponse' => \Spatie\ResponseCache\Middlewares\CacheResponse::class,
     ];
 
     /**
