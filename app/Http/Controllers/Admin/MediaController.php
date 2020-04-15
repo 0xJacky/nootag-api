@@ -21,7 +21,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Handlers\UploadHandler;
 use App\Http\Controllers\Controller;
-use App\Transformers\Admin\MediaTransformer;
+use App\Transformers\MediaTransformer;
 use Illuminate\Http\Request;
 use App\Models\Upload;
 use Dingo\Api\Routing\Helpers;
