@@ -24,7 +24,7 @@ class PostListTransformer extends TransformerAbstract
             'banner' => $post->banner ? $post->bannerImg->url : null,
             'category' => $post->category ? $post->category->name : null,
             'post_status' => $post->post_status,
-            'visits' => $post->visits(),
+            'visits' => $post->visit,
             'created_at' => $post->created_at->toDateString(),
             'updated_at' => $post->updated_at->toDateString()
         ];
