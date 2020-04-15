@@ -15,23 +15,18 @@ use League\Fractal\TransformerAbstract;
 
 class PostListTransformer extends TransformerAbstract
 {
-    public function transform(Post $post)
+    public static function transform(Post $post)
     {
-        $category = $post->category ? $post->category->name : null;
         return [
             'id' => $post->id,
             'title' => $post->title,
             'author' => $post->user->name,
-            'category' => $category,
+            'banner' => $post->banner ? $post->bannerImg->url : null,
+            'category' => $post->category ? $post->category->name : null,
             'post_status' => $post->post_status,
             'visits' => $post->visits(),
-            'likes' => $post->likes,
-            'dislikes' => $post->dislikes,
-            'comments' => $post->comments,
-            'allow_comment' => $post->allow_comment,
-            'push' => $post->push,
-            'created_at' => $post->created_at->toDateTimeString(),
-            'updated_at' => $post->updated_at->toDateTimeString()
+            'created_at' => $post->created_at->toDateString(),
+            'updated_at' => $post->updated_at->toDateString()
         ];
     }
 }

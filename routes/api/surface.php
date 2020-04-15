@@ -11,7 +11,3 @@
 $api->get('/', 'SurfaceController@ping');
 
 $api->get('surface/landing', 'SurfaceController@landing');
-
-$api->get('surface/donate', 'SurfaceController@donate');
-
-$api->get('surface/about', 'SurfaceController@about');

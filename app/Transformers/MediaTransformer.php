@@ -8,7 +8,7 @@
  * Time: 6:3 下午
  */
 
-namespace App\Transformers\Admin;
+namespace App\Transformers;
 
 use App\Models\Upload;
 use League\Fractal\TransformerAbstract;

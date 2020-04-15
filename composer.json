@@ -1,5 +1,5 @@
 {
-    "name": "nootag-api",
+    "name": "nootag",
     "type": "project",
     "description": "The Laravel Framework.",
     "keywords": [
@@ -15,14 +15,16 @@
     ],
     "require": {
         "php": "^7.2.5",
+        "alibabacloud/client": "^1.5",
+        "aliyuncs/oss-sdk-php": "^2.3",
+        "dingo/api": "^3.0",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
+        "laravel/passport": "^8.1",
         "laravel/tinker": "^2.0",
-        "dingo/api": "^3.0",
-        "overtrue/laravel-lang": "~3.0",
-        "laravel/passport": "^8.1"
+        "overtrue/laravel-lang": "~3.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

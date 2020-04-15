@@ -4,15 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Traits\PostList;
+use App\Transformers\PostListTransformer;
 use App\Transformers\PostTransformer;
 use Dingo\Api\Routing\Helpers;
-use Dingo\Blueprint\Annotation\Response;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     use Helpers;
-    use PostList;
 
     /**
      * 获取文章列表
@@ -27,21 +26,11 @@ class PostController extends Controller
      * @param Request $request
      * @return mixed
      */
-    public function get_list(Request $request)
+    public function get_list()
     {
-        $request = $request->validate([
-            'topic_id' => 'sometimes',
-            'post_type' => 'sometimes|in:post,contribution',
-            'from' => 'sometimes|integer'
-        ]);
-
-        return $this->response->array(
-            $this->get_posts(
-                $request['post_type'] ?? null,
-                $request['topic_id'] ?? null,
-                $request['from'] ?? null
-            )
-        );
+        $posts = Post::with('user', 'category')->where('post_status', 2)
+            ->orderBy('id', 'desc')->paginate(10);
+        return $this->response->paginator($posts, new PostListTransformer(), ['key' => 'posts']);
     }
 
     /**

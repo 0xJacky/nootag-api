@@ -12,18 +12,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Dingo\Api\Auth\Auth;
-use Illuminate\Support\Facades\Redis;
 
 
 class Post extends Model
 {
     use SoftDeletes;
-
-    const hash_prefix = 'post_';
-
-    protected $revisionEnabled = true;
-    protected $dontKeepRevisionOf = ['visits', 'likes', 'dislikes', 'comments'];
 
     /**
      * The attributes that are mass assignable.
@@ -32,9 +25,8 @@ class Post extends Model
      */
     protected $fillable = [
         'user_id', 'title', 'content', 'category_id',
-        'topic_id', 'post_name', 'post_status', 'post_type',
-        'comments', 'likes', 'dislikes',
-        'allow_comment', 'push', 'mark'
+        'post_name', 'post_status',
+        'visits'
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -88,9 +80,9 @@ class Post extends Model
 
     public function visits()
     {
-        $this->visits++;
+        $this->visit++;
         $this->save();
-        return $this->visits;
+        return $this->visit;
     }
 
 }
